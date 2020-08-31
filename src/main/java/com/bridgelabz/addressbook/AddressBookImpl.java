@@ -1,5 +1,6 @@
 package com.bridgelabz.addressbook;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,19 +10,19 @@ public class AddressBookImpl implements IAddressBook{
     List<Person> list = new LinkedList<Person>();
 
     public void add() {
-        System.out.println("enter your first name:");
+        System.out.println("Enter your first name");
         String firstName = scanner.nextLine();
-        System.out.println("enter your last name:");
+        System.out.println("Enter your last name");
         String lastName = scanner.nextLine();
-        System.out.println("enter your address");
+        System.out.println("Enter your address");
         String address = scanner.nextLine();
-        System.out.println("enter your city");
+        System.out.println("Enter your city");
         String city = scanner.nextLine();
-        System.out.println("enter your state");
+        System.out.println("Enter your state");
         String state = scanner.nextLine();
-        System.out.println("enter your phone");
+        System.out.println("Enter your phone");
         long mobileNo = scanner.nextLong();
-        System.out.println("enter your zip code");
+        System.out.println("Enter your zip code");
         String zip = scanner.next();
 
         Person person = new Person(firstName, lastName, address, city, state, mobileNo, zip);
@@ -99,6 +100,17 @@ public class AddressBookImpl implements IAddressBook{
             Person person = new Person(firstName, lastName, address, city, state, mobileNo, zip);
             list.add(person);
         }
+    }
+    @Override
+    public void sortByfirstName() {
+        {
+            Collections.sort(list,(name1, name2)  -> name1.getFirstName().compareTo(name2.getFirstName()));
+            System.out.println(list);
+        }
+    }
+    public void display() {
+        for (Person person : list)
+            System.out.println(person);
     }
 }
 

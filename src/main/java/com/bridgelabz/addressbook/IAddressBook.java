@@ -6,5 +6,7 @@ public interface IAddressBook {
     public void edit(String firstName);
     public void deletePerson(String firstName);
     public void addMultiplePerson();
+    public void sortByfirstName();
+    public void display();
 
 }
