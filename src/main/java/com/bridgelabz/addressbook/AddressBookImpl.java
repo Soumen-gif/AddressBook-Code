@@ -59,4 +59,15 @@ public class AddressBookImpl implements IAddressBook{
             System.out.println("Hi " + person.getFirstName() + " you have sucessfully updated");
         }
     }
+    @Override
+    public void deletePerson(String firstName) {
+        for(int i=0;i<list.size();i++)
+        {
+            if(list.get(i).getFirstName().equalsIgnoreCase(firstName))
+            {
+                Person person = list.get(i);
+                list.remove(person);
+            }
+        }
+    }
 }
