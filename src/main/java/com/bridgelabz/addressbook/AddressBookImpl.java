@@ -73,23 +73,32 @@ public class AddressBookImpl implements IAddressBook{
 
     @Override
     public void addMultiplePerson() {
-        System.out.println("enter your first name:");
+        System.out.println("Enter your first name");
         String firstName = scanner.nextLine();
-        System.out.println("enter your last name:");
-        String lastName = scanner.nextLine();
-        System.out.println("enter your address");
-        String address = scanner.nextLine();
-        System.out.println("enter your city");
-        String city = scanner.nextLine();
-        System.out.println("enter your state");
-        String state = scanner.nextLine();
-        System.out.println("enter your phone");
-        long mobileNo = scanner.nextLong();
-        System.out.println("enter your zip code");
-        String zip = scanner.next();
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getFirstName().equalsIgnoreCase(firstName)) {
+                System.out.println("No duplicate entry acceptable please enter valid name");
+                return;
+            }
+            // System.out.println("enter your first name:");
+            //
+            // String firstName = scanner.nextLine();
+            System.out.println("enter your last name:");
+            String lastName = scanner.nextLine();
+            System.out.println("enter your address");
+            String address = scanner.nextLine();
+            System.out.println("enter your city");
+            String city = scanner.nextLine();
+            System.out.println("enter your state");
+            String state = scanner.nextLine();
+            System.out.println("enter your phone");
+            long mobileNo = scanner.nextLong();
+            System.out.println("enter your zip code");
+            String zip = scanner.next();
 
-        Person person = new Person(firstName, lastName, address, city, state, mobileNo, zip);
-        list.add(person);
+            Person person = new Person(firstName, lastName, address, city, state, mobileNo, zip);
+            list.add(person);
+        }
     }
 }
 
