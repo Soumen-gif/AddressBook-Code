@@ -54,9 +54,30 @@ public class AddressBookMain {
                         addressBook.viewByState(state);
                         break;
                     }
+                case 10:
+                    System.out.println("press 1 for search person in city and 2 for seatch person in  state");
+                    int localOption1 = scanner.nextInt();
+                    if (localOption1 == 1)
+                    {
+                        System.out.println("enter person firstName");
+                        String firstname = scanner.next();
+                        addressBook.searchPersonInCity(firstname);
+                        break;
+                    }
+                    else
+                    {
+                        System.out.println("enter state firstName");
+                        String firstname = scanner.next();
+                        addressBook.searchPersonInState(firstname);
+                        break;
+
+                    }
                     case 9:
                     condition = false;
                     break;
+                default:
+                    System.out.println("Please enter the valid value");
+                    continue;
             }
         }
     }

@@ -140,5 +140,25 @@ public class AddressBookImpl implements IAddressBook{
         }
 
     }
+
+    @Override
+    public void searchPersonInCity(String firstName) {
+        List<Person> people = list.stream().filter(person1 -> person1.getFirstName().equalsIgnoreCase(firstName)).collect(Collectors.toList());
+
+        for (Person person: people)
+        {
+            System.out.println(person.getFirstName()+"---->"+person.getCity());
+        }
+    }
+
+    @Override
+    public void searchPersonInState(String firstName) {
+        List<Person> people = list.stream().filter(person1 -> person1.getFirstName().equalsIgnoreCase(firstName)).collect(Collectors.toList());
+        for (Person person: people)
+        {
+            System.out.println(person.getFirstName()+"---->"+person.getState());
+        }
+
+    }
 }
 

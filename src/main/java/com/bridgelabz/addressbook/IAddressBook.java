@@ -11,5 +11,7 @@ public interface IAddressBook {
     public void sortByZincode();
     void viewByCity(String city);
     void viewByState(String state);
+    void searchPersonInCity(String firstName);
+    void searchPersonInState(String firstName);
 
 }
