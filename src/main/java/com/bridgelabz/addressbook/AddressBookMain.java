@@ -37,7 +37,24 @@ public class AddressBookMain {
                          addressBook.sortByZincode();
                     case 7:
                     addressBook.addMultiplePerson();
-                    case 8:
+                case 8:
+                    System.out.println("press 1 for view by city and 2 for view by state");
+                    int Option = scanner.nextInt();
+                    if (Option == 1)
+                    {
+                        System.out.println("enter city name");
+                        String city = scanner.next();
+                        addressBook.viewByCity(city);
+                        break;
+                    }
+                    else
+                    {
+                        System.out.println("enter state name");
+                        String state = scanner.next();
+                        addressBook.viewByState(state);
+                        break;
+                    }
+                    case 9:
                     condition = false;
                     break;
             }

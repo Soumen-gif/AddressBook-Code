@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class AddressBookImpl implements IAddressBook{
     Scanner scanner = new Scanner(System.in);
@@ -119,6 +120,25 @@ public class AddressBookImpl implements IAddressBook{
             Collections.sort(list,( z1,z2)  -> z1.getFirstName().compareTo(z2.getFirstName()));
             System.out.println(list);
         }
+    }
+
+    @Override
+    public void viewByCity(String city) {
+        List<Person> people = list.stream().filter(person1 -> person1.getCity().equalsIgnoreCase(city)).collect(Collectors.toList());
+        for (Person person: people )
+        {
+            System.out.println(person);
+        }
+    }
+
+    @Override
+    public void viewByState(String state) {
+        List<Person> people = list.stream().filter(person1 -> person1.getState().equalsIgnoreCase(state)).collect(Collectors.toList());
+        for (Person person: people )
+        {
+            System.out.println(person);
+        }
+
     }
 }
 

@@ -9,5 +9,7 @@ public interface IAddressBook {
     public void sortByfirstName();
     public void display();
     public void sortByZincode();
+    void viewByCity(String city);
+    void viewByState(String state);
 
 }
