@@ -8,5 +8,6 @@ public interface IAddressBook {
     public void addMultiplePerson();
     public void sortByfirstName();
     public void display();
+    public void sortByZincode();
 
 }

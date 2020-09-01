@@ -112,5 +112,13 @@ public class AddressBookImpl implements IAddressBook{
         for (Person person : list)
             System.out.println(person);
     }
+
+    @Override
+    public void sortByZincode() {
+        {
+            Collections.sort(list,( z1,z2)  -> z1.getFirstName().compareTo(z2.getFirstName()));
+            System.out.println(list);
+        }
+    }
 }
 

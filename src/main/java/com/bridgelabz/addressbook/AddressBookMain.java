@@ -15,7 +15,7 @@ public class AddressBookMain {
             switch (choice)
             {
                 case 1:
-                           addressBook.addMultiplePerson();
+                           addressBook.add();
                     break;
                     case 2:
                            addressBook.display();
@@ -34,7 +34,11 @@ public class AddressBookMain {
                     case 5:
                          addressBook.sortByfirstName();
                     case 6:
-                         condition = false;
+                         addressBook.sortByZincode();
+                    case 7:
+                    addressBook.addMultiplePerson();
+                    case 8:
+                    condition = false;
                     break;
             }
         }
